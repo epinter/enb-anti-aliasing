@@ -49,7 +49,7 @@ void FidelityFX::CreateFSRResources()
 	contextDescription.maxUpscaleSize.height = gameViewport->screenHeight;
 	contextDescription.displaySize.width = gameViewport->screenWidth;
 	contextDescription.displaySize.height = gameViewport->screenHeight;
-	contextDescription.flags = FFX_FSR3_ENABLE_UPSCALING_ONLY;
+	contextDescription.flags = FFX_FSR3_ENABLE_UPSCALING_ONLY | FFX_FSR3_ENABLE_AUTO_EXPOSURE | FFX_FSR3_ENABLE_MOTION_VECTORS_JITTER_CANCELLATION;
 	contextDescription.backBufferFormat = FFX_SURFACE_FORMAT_R8G8B8A8_UNORM;
 	contextDescription.backendInterfaceUpscaling = fsrInterface;
 
