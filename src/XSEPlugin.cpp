@@ -102,7 +102,12 @@ bool Load()
 		RE::UI::GetSingleton()->GetEventSource<RE::MenuOpenCloseEvent>()->AddEventSink(Upscaling::GetSingleton());
 
 	} else {
-		logger::info("Unable to acquire ENB API, disabling hooks");
+		Upscaling::GetSingleton()->LoadINI();
+		Hooks::InstallD3DHooks();
+		Upscaling::InstallHooks();
+
+		logger::info("Registering for MenuOpenCloseEvent");
+		RE::UI::GetSingleton()->GetEventSource<RE::MenuOpenCloseEvent>()->AddEventSink(Upscaling::GetSingleton());
 	}
 
 	return true;
