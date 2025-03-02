@@ -5,6 +5,14 @@
 		"minor": 21,
 		"patch": 0
 	},
+    "buildPresets": [
+        {
+            "name": "release-ALL",
+            "displayName": "Release ALL",
+            "configurePreset": "ALL",
+            "configuration": "Release"
+          }
+    ],
 	"configurePresets": [
 		{
 			"name": "common",
